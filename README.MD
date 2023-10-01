@@ -272,7 +272,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
     "temporadas": 4,
     "trailer": ""
     }]
-    ```
+  ```
 
 # obtener-catalogo-por-categoria
 #### filtrar catalogo por categoria (filtro like)
@@ -283,7 +283,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
   - **Código**: 200 OK
   - **Ejemplo de Respuesta**:
 
-    ```json
+```json
           {
     "id": 6,
     "poster": "/posters/6.jpg",
@@ -383,7 +383,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
     ]
       }
 
-    ```
+  ```
 
 # obtener-actor-por-nombre
 #### buscar actor por nombre(filtro like)
@@ -395,7 +395,8 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
 - **Respuesta Exitosa**:
   - **Código**: 200 OK
   - **Ejemplo de Respuesta**:
-  ```json
+  
+```json
     [
     {
     "id": 3,
@@ -418,7 +419,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
     ]
   }
     ]
-  ```
+```
 
 
 
