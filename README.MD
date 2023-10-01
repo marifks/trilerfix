@@ -9,7 +9,36 @@ Esta es una API de ejemplo que utiliza Node.js, Express y Sequelize para listar 
   listarCatalogoCategoria,
   listarCatalogoActor 
    A continuación, encontrarás la documentación para utilizar esta API.
+1 [Modelo - Entidad - Relación](#Modelo_Entidad_Relación)
+*  [Requisitos Previos](#Requisitos_Previos)
 
+2   [desarrollo](#desarrollo)
+*  [obtener la vista sql](#obtener-catalogo)
+
+*  [Listar todas las categorías](#obtener-todas-las-categorias)
+
+*  [filtrar catalogo por id](#obtener-catalogo-por-id)
+
+*  [filtrar catalogo por nombre](#obtener-catalogo-por-nombre)
+
+*  [filtrar catalogo por categoria](#obtener-catalogo-por-categoria)
+
+*  [filtrar actor por nombre](#obtener-actor-por-nombre)
+
+
+
+
+
+
+3   [ end point del proyecto](#endpoint)
+
+4   [ relacion de tablas](#relacion)
+
+
+
+
+
+# Modelo_Entidad_Relación
 ## Modelo - Entidad - Relación
 
 
@@ -17,7 +46,7 @@ Esta es una API de ejemplo que utiliza Node.js, Express y Sequelize para listar 
 
 ![Modelo Api Post](imagenmodelo.png/)
 
-
+# Requisitos_Previos
 ## Requisitos Previos
 
 Asegúrate de tener Node.js y MySQL instalados en tu sistema antes de ejecutar la aplicación. Además, crea una base de datos MySQL y configura las credenciales en un archivo `.env` en la raíz del proyecto como se muestra en el siguiente ejemplo.
@@ -63,13 +92,45 @@ DB_PASSWORD=mi_contraseña_secreta_de_mysql
 La API estará disponible en `http://localhost:3000`.
 
 
-
+# desarrollo
 ## Endpoints
 
 A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
 
-### Categorías
 
+# obtener-catalogo
+#### obtener la vista sql como el archivo datos.json
+
+- **URL**: `/api/catalogo`
+- **Método**: `GET`
+- **Respuesta Exitosa**:
+  - **Código**: 200 OK
+  - **Ejemplo de Respuesta**:
+
+   ``` json
+
+    [
+    {
+      "id": 1,
+      "poster": "http://localhost:3000/api/posters/1.jpg",
+      "titulo": "The Crown",
+      "categoria": "Serie",
+      "genero": "Drama,Hechos verídicos",
+      "resumen": "Este drama narra las rivalidades políticas y el romance de la reina Isabel II, así como los sucesos que moldearon la segunda mitad del siglo XX.",
+      "temporadas": 4,
+      "reparto": "Claire Fox,Helena Bonham Carter,Matt Smith,Olivia Colman,Tobias Menzies,Vanesa Kirby",
+      "trailer": ""
+    }]
+
+
+
+      ```
+
+
+
+
+
+# obtener-todas-las-categorias
 #### Listar todas las categorías
 
 - **URL**: `/api/categoria`
@@ -79,7 +140,8 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
   - **Ejemplo de Respuesta**:
 
     ```json
-[
+  
+  [
   {
     "id": 1,
     "categoria": "Serie"
@@ -88,10 +150,10 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
     "id": 2,
     "categoria": "Película"
   }
-]
+  ]
     ```
 
-
+# obtener-catalogo-por-id
 #### Obtener un catalogo por ID
 
 - **URL**: `/api/catalogo/id/:id`
@@ -101,7 +163,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
   - **Ejemplo de Respuesta**:
 
     ```json
-   {
+     {
   "id": 1,
   "poster": "/posters/1.jpg",
   "titulo": "The Crown",
@@ -189,10 +251,10 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
       }
     }
   ]
-}
+  }
     ```
 
-
+# obtener-catalogo-por-nombre
 #### filtrar catalogo por nombre (filtro like)  
 
 - **URL**: `/api/catalogo/nombre/:nombre`
@@ -202,8 +264,8 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
   - **Ejemplo de Respuesta**:
 
     ```json
-    [
-  {
+      [
+        {
     "id": 1,
     "poster": "/posters/1.jpg",
     "titulo": "The Crown",
@@ -212,9 +274,10 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
     "temporadas": 4,
     "trailer": ""
   }
-]
+    ]
     ```
 
+# obtener-catalogo-por-categoria
 #### filtrar catalogo por categoria (filtro like)
 
 - **URL**: `/api/catalogo/categoria/pelicula`
@@ -224,7 +287,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
   - **Ejemplo de Respuesta**:
 
     ```json
-    { {
+          {
     "id": 6,
     "poster": "/posters/6.jpg",
     "titulo": "Enola Holmes",
@@ -321,11 +384,11 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
         }
       }
     ]
-  }
+      }
+
     ```
 
-
-
+# obtener-actor-por-nombre
 #### buscar actor por nombre(filtro like)
 
 - **URL**: `/api/catalogo/actor/Brett`
@@ -336,8 +399,8 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
   - **Código**: 200 OK
   - **Ejemplo de Respuesta**:
   ```json
-[
-  {
+    [
+    {
     "id": 3,
     "poster": "/posters/3.jpg",
     "titulo": "The Mandalorian",
@@ -357,7 +420,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
       }
     ]
   }
-]
+    ]
   ```
 
 
@@ -379,7 +442,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
 
 
 
-
+# relacion
 ## Tabla `catalogo_Genero`
 
 La tabla `catalogo_Genero` se utiliza para mantener un registro de las relaciones entre las catalogo y las genero. Esta tabla es esencial para implementar una relación de uno  a muchos entre las titulos y los generos, ya que permite asociar múltiples generos a un titulo.
@@ -419,7 +482,7 @@ La API devuelve mensajes de error con los códigos de estado correspondientes en
 
 ## Conclusiones
 
-Esta es una API de ejemplo que utiliza Node.js, Express y Sequelize para listar por catalogo, id,nombre,categorias,actor,generos. Puedes utilizar esta API como base para desarrollar tu propia aplicación web o móvil. Asegúrate de personalizarla según tus necesidades específicas y de implementar la seguridad y la autorización adecuadas para proteger tus recursos.
+Esta es una API de ejemplo que utiliza Node.js, Express y Sequelize para listar por vista,catalogo, id,nombre,categorias,actor,generos. 
 
 el archivo json esta en la carpeta db/datos.json
 
