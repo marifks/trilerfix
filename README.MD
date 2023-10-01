@@ -9,6 +9,8 @@ Esta es una API de ejemplo que utiliza Node.js, Express y Sequelize para listar 
   listarCatalogoCategoria,
   listarCatalogoActor 
    A continuación, encontrarás la documentación para utilizar esta API.
+
+   
 1 [Modelo - Entidad - Relación](#Modelo_Entidad_Relación)
 *  [Requisitos Previos](#Requisitos_Previos)
 
@@ -107,10 +109,10 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
   - **Código**: 200 OK
   - **Ejemplo de Respuesta**:
 
-   ``` json
+ ``` json
 
-    [
-    {
+         
+         {
       "id": 1,
       "poster": "http://localhost:3000/api/posters/1.jpg",
       "titulo": "The Crown",
@@ -120,11 +122,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
       "temporadas": 4,
       "reparto": "Claire Fox,Helena Bonham Carter,Matt Smith,Olivia Colman,Tobias Menzies,Vanesa Kirby",
       "trailer": ""
-    }]
-
-
-
-      ```
+        }```
 
 
 
@@ -139,19 +137,17 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
   - **Código**: 200 OK
   - **Ejemplo de Respuesta**:
 
-    ```json
-  
-  [
-  {
-    "id": 1,
-    "categoria": "Serie"
-  },
-  {
-    "id": 2,
-    "categoria": "Película"
-  }
-  ]
-    ```
+``` json
+    [
+     {
+      "id": 1,
+     "categoria": "Serie"
+     },
+     {
+     "id": 2,
+     "categoria": "Película"
+              }]
+```
 
 # obtener-catalogo-por-id
 #### Obtener un catalogo por ID
@@ -161,20 +157,20 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
 - **Respuesta Exitosa**:
   - **Código**: 200 OK
   - **Ejemplo de Respuesta**:
-
-    ```json
-     {
-  "id": 1,
-  "poster": "/posters/1.jpg",
-  "titulo": "The Crown",
-  "categoria": true,
-  "resumen": "Este drama narra las rivalidades políticas y el romance de la reina Isabel II, así como los sucesos que moldearon la segunda mitad del siglo XX.",
+  - 
+```json
+ {
+    "id": 1,
+   "poster": "/posters/1.jpg",
+   "titulo": "The Crown",
+    "categoria": true,
+    "resumen": "Este drama narra las rivalidades políticas y el romance de la reina Isabel II, así como los sucesos que moldearon la segunda mitad del siglo XX.",
   "temporadas": 4,
   "trailer": "",
   "Categoria": {
     "id": 1,
     "categoria": "Serie"
-  },
+     },
   "Actores": [
     {
       "id": 25,
@@ -252,7 +248,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
     }
   ]
   }
-    ```
+  ```
 
 # obtener-catalogo-por-nombre
 #### filtrar catalogo por nombre (filtro like)  
@@ -263,7 +259,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
   - **Código**: 200 OK
   - **Ejemplo de Respuesta**:
 
-    ```json
+```json
       [
         {
     "id": 1,
@@ -273,8 +269,7 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
     "resumen": "Este drama narra las rivalidades políticas y el romance de la reina Isabel II, así como los sucesos que moldearon la segunda mitad del siglo XX.",
     "temporadas": 4,
     "trailer": ""
-  }
-    ]
+    }]
     ```
 
 # obtener-catalogo-por-categoria
