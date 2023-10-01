@@ -10,7 +10,7 @@ Esta es una API de ejemplo que utiliza Node.js, Express y Sequelize para listar 
   listarCatalogoActor 
    A continuación, encontrarás la documentación para utilizar esta API.
 
-   
+
 1 [Modelo - Entidad - Relación](#Modelo_Entidad_Relación)
 *  [Requisitos Previos](#Requisitos_Previos)
 
@@ -122,7 +122,9 @@ A continuación, se detallan los endpoints disponibles y cómo utilizarlos:
       "temporadas": 4,
       "reparto": "Claire Fox,Helena Bonham Carter,Matt Smith,Olivia Colman,Tobias Menzies,Vanesa Kirby",
       "trailer": ""
-        }```
+        }
+        
+   ```
 
 
 
